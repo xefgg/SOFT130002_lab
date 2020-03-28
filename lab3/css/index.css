@@ -1,0 +1,124 @@
+.article{
+    margin-left: 315px;
+    margin-right: 650px;
+}
+
+.sidebar{
+    margin-right: 200px;
+    float: right;
+    width: 400px;
+    margin-top:-80px;
+}
+
+.logo{
+    margin-top: 0px;
+    margin-left: 300px;
+}
+
+.nav{
+    margin-top: -43px;
+    margin-left: 450px;
+    margin-bottom: 20px;
+}
+
+.client{
+    margin-left: 1530px;
+    margin-top: -30px;
+}
+
+.register{
+    font-size:18px;
+    color: #0084ff;
+    font-weight: 600;
+}
+
+.recommendation{
+    margin-left: 338px;
+    margin-top: 30px;
+    color: #0084ff;
+    font-weight: 600;
+    margin-bottom: 30px;
+    font-size: 18px;
+}
+
+.pagination{
+    margin-left: 360px;
+    text-decoration: none;
+    margin-bottom: 80px;
+    font-family: 微软雅黑;
+}
+
+button{
+    border: none;
+    color: #0084ff;
+    font-weight: bold;
+    background-color: #e6f3ff;
+    border-radius: 50px;
+    font-size: small;
+    width: 100px;
+    height: 30px;
+    margin-bottom: 15px;
+}
+
+button:hover{
+    background-color: #d7eefe;
+
+}
+
+ul{
+    list-style: none;
+}
+
+.homepage{
+    margin-left: 0px;
+    font-weight: 600;
+    font-size:16px;
+    color: black;
+}
+
+.find{
+    margin-left: 30px;
+    color: #8590a6;
+    font-weight: 500;
+    font-size:16px;
+}
+
+.wait{
+    margin-left: 30px;
+    color: #8590a6;
+    font-weight: 500;
+    font-size:16px;
+}
+
+h3{
+    font-size: larger;
+}
+
+a{
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+.wrtieAnswer{
+    margin-top: 0px;
+}
+
+.writeArticle{
+    margin-top: -74.5px;
+    margin-left:100px;
+    float: left;
+}
+
+.drafts{
+    margin-top: -73.5px;
+    margin-left:200px;
+    float: left;
+}
+
+
+
+
+
