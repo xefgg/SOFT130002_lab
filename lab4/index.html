@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <link href="bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet">
+    <link href="index.css" rel="stylesheet">
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="index.js"></script>
+    <title>Index</title>
+</head>
+<body>
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <!-- logo -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"><img alt="Brand" src="images/logo.png" width="40px" height="40px"></a>
+          </div>
+      
+          <!-- 导航栏 -->
+          <div class="collapse navbar-collapse" id="navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="index.html">Home <span class="sr-only">(current)</span></a></li>
+              <li><a href="src/html/browse.html">Browse</a></li>
+              <li><a href="src/html/search.html">Search</a></li>
+            </ul>
+              <!-- 账户类居右显示 -->
+              <ul class="nav navbar-nav nav-pills navbar-right" id="myAccount">
+              <li role="presentation" class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="true">My account <span class="caret"></span></a>
+                  <!-- 账户类下拉菜单 -->
+                  <ul class="dropdown-menu">
+                    <li><a href="src/html/upload.html"><span class="glyphicon glyphicon-upload"></span>Upload</a></li>
+                    <li><a href="src/html/myUpload.html"><span class="glyphicon glyphicon-picture"></span>My Photo</a></li>
+                    <li><a href="src/html/favorite.html"><span class="glyphicon glyphicon-heart"></span>My Favorite</a></li>
+                    <li><a href="src/html/login.html"><span class="glyphicon glyphicon-log-in"></span>Log In</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+    <!-- 巨幕 -->
+    <div class="jumbotron">
+        <div class="container">
+            <h1>Hello, welcome to our travel website!</h1>
+            <p>This is Travel.com, an easy and convenient tool for sharing all your brilliant moments during your journey. If anything uncleared, click the button below to get more information. Start to view now!</p>
+            <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+        </div>
+    </div>
+
+    <!-- 引入carousel轮播插件 -->
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+        <!-- Indicators提示当前图片序号 -->
+        <ol class="carousel-indicators">
+          <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+        </ol>
+      
+        <!-- 内置图片 -->
+        <div class="carousel-inner" role="listbox">
+          <div class="item active">
+            <img src="images/frontPage1.jpg" alt="Roma night view">
+            <div class="carousel-caption">
+              Roma City Night View
+            </div>
+          </div>
+          <div class="item">
+            <img src="images/frontPage2.jpg" alt="...">
+            <div class="carousel-caption">
+              The Dawn
+            </div>
+          </div>
+          <div class="item">
+            <img src="images/frontPage3.jpg" alt="...">
+            <div class="carousel-caption">
+              River View at night
+            </div>
+          </div>
+        </div>
+      
+        <!-- slide控制图片切换的过渡和动画效果 -->
+        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+    <div class="shanlan">
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-sm-4 col-md-4 col-lg-4">
+                <div class="display">
+                    <a href="Details.html">
+                        <img src="images/Home_1.jpg" alt="Picture 1">
+                    </a>
+                    <div class="details">
+                        <h3>Title</h3>
+                        <p>Picture desciptions in details</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-4">
+                <div class="display">
+                    <a href="Details.html">
+                        <img class="img-responsive" src="images/Home_1.jpg" alt="Picture 2">
+                    </a>
+                    <div class="details">
+                        <h3>Title</h3>
+                        <p>Picture desciptions in details</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-4">
+                <div class="display">
+                    <a href="Details.html">
+                        <img src="images/Home_1.jpg" alt="Picture 3">
+                    </a>
+                    <div class="details">
+                        <h3>Title</h3>
+                        <p>Picture desciptions in details</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-4">
+                <div class="display">
+                    <a href="Details.html">
+                        <img src="images/Home_1.jpg" alt="Picture 4">
+                    </a>
+                    <div class="details">
+                        <h3>Title</h3>
+                        <p>Picture desciptions in details</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-4">
+                <div class="display">
+                    <a href="Details.html">
+                        <img src="images/Home_1.jpg" alt="Picture 5">
+                    </a>
+                    <div class="details">
+                        <h3>Title</h3>
+                        <p>Picture desciptions in details</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-4">
+                <div class="display">
+                    <a href="Details.html">
+                        <img src="images/Home_1.jpg" alt="Picture 6">
+                    </a>
+                    <div class="details">
+                        <h3>Title</h3>
+                        <p>Picture desciptions in details</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </div>
+    <button class="refresh" onclick="refresh()">
+        <span class="glyphicon glyphicon-refresh"></span>
+    </button>
+    <button class="backToTop" onclick="backToTop()" >
+        <span class="glyphicon glyphicon-chevron-up"></span>
+    </button>
+
+    <footer>
+        <div class="container">
+           <div class="row">
+              <div class="col-md-3">
+                 <p><a>Terms of use</a></p>
+                        <p><a>Privacy protection</a></p>
+                        <p><a>Cookie</a></p>
+              </div>
+              <div class="col-md-3">
+                 <p><a>About</a></p>
+                 <p><a>Contact us</a></p>
+              </div>
+              <div class="col-md-3">
+                 <div>
+                    <img src="images/wechat.png" width="30px" />
+                    <img src="images/facebook.png" width="30px" />
+                </div>
+                <div>
+                    <img src="images/instagram.png" width="30px" />
+                    <img src="images/twitter.png" width="30px" />
+                </div>
+                 </div>  
+                  
+              <div class="col-md-3">
+                  <img src="images/wechat2DCode.jpg" width="70px"/>
+              </div>
+            </div> 
+           </div>
+        </div>
+        
+        <div id="copyrightRow">
+           <div class="container">
+              <div class="row">
+                <p class="copyright">Copyright © 2020 Software School Web Fundamental. All Rights Reserved. Internet Content Provider：Fudan 18307130274</p>
+              </div>
+           </div>
+        </div>
+     </footer>
+
+</body>
+</html>
