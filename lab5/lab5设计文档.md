@@ -115,4 +115,4 @@ function arrSameStr(){
 
 * Github截图
 
-![github](./github截图.png)
+![github](./github%20page.png)
