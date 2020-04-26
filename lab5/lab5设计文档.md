@@ -114,3 +114,5 @@ function arrSameStr(){
 ![wangye](./lab05测试.png)
 
 * Github截图
+
+![github](./github截图.png)
