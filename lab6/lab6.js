@@ -11,9 +11,33 @@
 */
 
 function testTime(){
+    let i = 0;
+    let counter = 1;
+    function double() {
+        counter *= 2;
+    }
+    function getI(){
+        i +=1
+        return i;
+    }
+    function printCounter(){
+        return counter;
+    }
+    return{
 
+            const: interval = setInterval(function () {
+                let now = new Date();
+                console.log(`${now}:${printCounter()}`);
+                if (now.getSeconds() >= 55 || getI() > 10) {
+                    window.clearInterval(interval);
+                    console.log("one minute!");
+                }
+                double();
+            }, 5 * 1000)
+
+    }
 }
-// testTime();
+
 
 /*
 2.
@@ -24,7 +48,20 @@ function testTime(){
     ④telephone与mail均是字符串。
 */
 function testMail(telephone,mail) {
-
+    let telreg = /^[1][3,5,7,8][0-9]{9}$/;
+    let mailreg = /^([a-zA-Z]|[0-9])(\w|\-)+@[a-zA-Z0-9]+\.([a-zA-Z]{2,4})$/;
+    let log = "";
+    if(telreg.test(telephone)){
+        log = "The telephone is right and "
+    }else{
+        log = "The telephone is right and "
+    }
+    if(mailreg.test(mail)){
+        log += "the mail is right!"
+    }else{
+        log += "the mail is wrong!"
+    }
+    console.log(log);
 }
 
 /*
@@ -37,7 +74,14 @@ function testMail(telephone,mail) {
     ⑤str为字符串。
 */
 function testRedundancy(str) {
-
+    let reg = /\b([a-z]+) \1\b/gi;
+    let sets = str.match(reg)
+    sets.sort();
+    let s = new Set();
+    for (let i = 0; i < Math.min(sets.length,10); i++){
+        s.add(sets[i])
+    }
+    console.log(s)
 }
 
 
@@ -56,7 +100,15 @@ function testRedundancy(str) {
     ①注意联系生活，并注意观察我给的上述例子。
 */
 function testKeyBoard(wantInput, actualInput) {
-
+    wantInput = wantInput.toUpperCase();
+    actualInput = actualInput.toUpperCase();
+    let s = new Set();
+    for (let i=0; i < wantInput.length; i++){
+        if(actualInput.indexOf(wantInput[i]) == -1){
+            s.add(wantInput[i])
+        }
+    }
+    console.log(s)
 }
 
 /*
@@ -72,6 +124,13 @@ function testKeyBoard(wantInput, actualInput) {
     ⑤str为字符串。
 */
 function testSpecialReverse(str) {
+    let newStr = str.trim().split(/\s+/);
+    let arr = new Array();
+    for( let i=0; i < newStr.length; i++){
+        arr.unshift(newStr[i]);
+    }
+    let reverse = arr.join(" ");
+    console.log(reverse);
 }
 
 /*
@@ -90,6 +149,14 @@ function testSpecialReverse(str) {
 */
 
 function twoSum(nums, target) {
+    let map = new Map();
+    for(let i = 0;i < nums.length; i++){
+        let sub = target - nums[i];
+        if(map.has(sub)){
+            console.log([map.get(sub),i])
+        }
+        map.set(nums[i],i)
+    }
 }
 
 
@@ -105,6 +172,20 @@ function twoSum(nums, target) {
     ⑤str为字符串。
 */
 function lengthOfLongestSubstring(str) {
+    let sub = '';
+    let len = 0;
+    for(let i=0; i<str.length; i++){
+        let char = str.charAt(i)
+        let index = sub.indexOf(char)
+        if(index == -1){
+            sub += char
+            len = len < sub.length? sub.length : len;
+        }
+        else{
+            sub = sub.substr(index+1) + char
+        }
+    }
+    console.log(len)
 }
 
 /*
@@ -118,4 +199,50 @@ function lengthOfLongestSubstring(str) {
 */
 function Country() {
     this.name = "国家";
+}
+
+function DevelopingCountry() {
+    this.name = "Developing Country";
+    Country.call(this,name);
+    this.sayHi = function () {
+        console.log("Hi,i am a developing country.");
+    }
+}
+
+function PoorCountry(){
+    this.name = "Poor Country";
+    this.saySad = function () {
+        console.log("I am a sad poor country.");
+    }
+}
+PoorCountry.prototype = new Country();
+PoorCountry.prototype.constructor = PoorCountry;
+
+function DevelopedCountry() {
+    Country.call(this,name);
+    this.sayHappy = function () {
+        console.log("I am a Happy developed country.");
+    }
+}
+DevelopedCountry.prototype = Object.create(Country.prototype);
+DevelopedCountry.prototype.constructor = DevelopedCountry;
+
+function printCountry() {
+    let developing = new DevelopingCountry();
+    developing.sayHi();
+    let poor = new PoorCountry();
+    poor.saySad();
+    let developed = new DevelopedCountry();
+    developed.sayHappy();
+}
+
+window.onload = function test() {
+    testTime();
+    testMail('13801797675','1418344529@qq.com');
+    testRedundancy('Is is the iS is cost of of gasoline going up up');
+    testKeyBoard('7_This_is_a_test','_hs_s_a_es ');
+    testSpecialReverse('  hello  world!  ');
+    twoSum([1, 2, 3, 4],5);
+    lengthOfLongestSubstring('abbbbb');
+    printCountry()
 }
