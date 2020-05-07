@@ -75,6 +75,9 @@ let reg = /\b([a-z]+) \1\b/gi;
 ## Gitgub及本地命令行截图
 
 * github截图
+
+![github](github.png)
+
 * 本地命令行截图
 
 ![test](test.png)
