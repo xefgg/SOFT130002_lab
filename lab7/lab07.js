@@ -4,3 +4,46 @@ const works = [
     { author: "John Herry UY", lifetime:"1894-1928",tips: "Abstract", photos: ["abstract1.jpg","abstract2.jpg","abstract3.jpg","abstract4.jpg","abstract5.jpg"] },
     { author: "Coco",lifetime:"1777-1799", tips: "Beauty",  photos: ["beauty1.jpg","beauty2.jpg"] }
 ];
+
+window.onload = function add(){
+    for(let i=0;i<works.length;i++){
+        let item = document.getElementsByClassName('flex-container justify')[0];
+        let div = document.createElement("div");
+        div.className = 'item';
+        let h4 = document.createElement("h4");
+        h4.innerHTML = "Genre :" + " " + works[i].tips;
+        div.appendChild(h4);
+        let div2 = document.createElement("div");
+        div2.className = 'inner-box';
+        let author = document.createElement("h3");
+        author.innerHTML = works[i].author;
+        author.style.display = "inline";
+        div2.appendChild(author);
+        let lifetime = document.createElement("h5");
+        lifetime.innerHTML = "lifetime:" + works[i].lifetime;
+        lifetime.style.display = "inline"
+        lifetime.style.marginLeft = "1em";
+        div2.appendChild(lifetime);
+        div.appendChild(div2);
+        let div3 = document.createElement("div");
+        div3.className = 'inner-box';
+        let photos = document.createElement("h3");
+        photos.innerHTML = "Popular Photos";
+        div3.appendChild(photos);
+        for(let j=0;j<works[i].photos.length;j++){
+            let img = document.createElement("img");
+            img.className = "photo";
+            img.src = works[i].photos[j];
+            div3.appendChild(img);
+        }
+        div.appendChild(div3);
+        let button = document.createElement("button");
+        button.className = "button";
+        button.innerHTML = "Visit";
+        div.appendChild(button);
+        item.appendChild(div);
+    }
+
+
+
+}
