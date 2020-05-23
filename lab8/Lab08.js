@@ -4,6 +4,9 @@
 
 /*Global Variable Area */
 
+let index = 0;
+let count = document.getElementsByTagName("span");
+
 /*********************************************end*************************************/
 
 
@@ -24,6 +27,48 @@
 
 /*Code Here*/
 
+let wrap = document.querySelector(".wrap");
+let next = document.querySelector(".arrow_right");
+let prev = document.querySelector(".arrow_left");
+
+next.onclick = function () {
+    let nextPic;
+    /* 处理边界图片 */
+    if(wrap.style.left === "-3600px"){
+        nextPic = -1200;
+    }else{
+        nextPic = parseInt(wrap.style.left)-600;
+    }
+    wrap.style.left = nextPic + "px";
+    index++;
+    if(index > 4){
+        index = 0;
+    }
+    for(var i = 0; i < count.length; i++){
+        count[i].className = "";
+    }
+    count[index].className = "on";
+}
+
+prev.onclick = function () {
+    let prePic;
+    /* 处理边界图片 */
+    if(wrap.style.left === "0px"){
+        prePic = -2400;
+    }else{
+        prePic = parseInt(wrap.style.left)+600;
+    }
+    wrap.style.left = prePic + "px";
+    index--;
+    if(index < 0){
+        index = 4;
+    }
+    for(var i = 0; i < count.length; i++){
+        count[i].className = "";
+    }
+    count[index].className = "on";
+}
+
 /*********************************************end*************************************/
 
 
@@ -41,6 +86,37 @@
 
 /*Code Here*/
 
+let time = null;
+let container = document.querySelector(".container");
+function play () {
+    time = setInterval(function () {
+        let nextPic;
+        /* 处理边界图片 */
+        if(wrap.style.left === "-3600px"){
+            nextPic = -1200;
+        }else{
+            nextPic = parseInt(wrap.style.left)-600;
+        }
+        wrap.style.left = nextPic + "px";
+        index++;
+        if(index > 4){
+            index = 0;
+        }
+        for(let i = 0; i < count.length; i++){
+            count[i].className = "";
+        }
+        count[index].className = "on";
+    },500 * 2);
+}
+window.onload = play();
+container.onmouseenter = function () {
+    clearInterval(time);
+}
+container.onmouseleave = function () {
+    play();
+}
+
+
 /*********************************************end*************************************/
 
 
@@ -56,6 +132,27 @@
 
 /*Code Here*/
 
+for (let i = 0; i < count.length ; i++){
+    (function(i){
+        count[i].onclick = function () {
+            let now = index - i;
+            /* 处理边界图片 */
+            if(index == 4 && parseInt(wrap.style.left)!==-3000){
+                now = now - 5;
+            }
+            if(index == 0 && parseInt(wrap.style.left)!== -600){
+                now = now + 5;
+            }
+            wrap.style.left = (parseInt(wrap.style.left) +  now * 600)+"px";
+            index = i;
+            for(let j = 0; j < count.length; j++){
+                count[j].className = "";
+            }
+            count[index].className = "on";
+        }
+    })(i);
+}
+
 /*********************************************end*************************************/
 
 
@@ -69,5 +166,14 @@
 /********************************************begin************************************/
 
 /*Code Here*/
-
+$('table td').bind("click",function(){
+    /* 点击后新增一个input输入框，初始值为td内原来的值 */
+    let newInput = $("<input type='text' value='"+ $(this).text() +"'/>");
+    $(this).html(newInput);
+    newInput.focus();
+    /* 失去焦点后，input重新变为td的text */
+    newInput.blur(function(){
+        newInput.parent().html(newInput.val());
+    });
+});
 /*********************************************end*************************************/
