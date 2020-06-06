@@ -7,14 +7,18 @@ require_once('config.php');
 */
 function outputGenres() {
    try {
-      $pdo = new PDO(DBCONNSTRING,DBUSER,DBPASS);
+      $pdo = new PDO(DBCONNSTRING,DBUSER,DBPASS); 
       $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-               
 
+      $sql = 'select GenreId, GenreName, Description from Genres Order By GenreID';
+      $result = $pdo->query($sql); 
+      
+      while ($row = $result->fetch()) {
+         outputSingleGenre($row); 
+      }
       $pdo = null;
-   }
-   catch (PDOException $e) {
-      die( $e->getMessage() );
+   }catch (PDOException $e) {
+      die( $e->getMessage() ); 
    }
 }
 
@@ -22,7 +26,17 @@ function outputGenres() {
  Displays a single genre
 */
 function outputSingleGenre($row) {
-
+   echo '<div class="ui fluid card">';
+   echo '<div class="ui fluid image">';
+   $img = '<img src="images/art/genres/square-medium/' .$row['GenreId'] .'.jpg">'; 
+   echo constructGenreLink($row['GenreId'], $img);
+   echo '</div>';
+   echo '<div class="extra">';
+   echo '<h4>';
+   echo constructGenreLink($row['GenreId'], $row['GenreName']);
+   echo '</h4>';
+   echo '</div>'; // end class=extra
+   echo '</div>'; // end class=card
 }
 
 /* 
@@ -30,7 +44,10 @@ function outputSingleGenre($row) {
   be a name or even an image tag
 */
 function constructGenreLink($id, $label) {
-
+   $link = '<a href="genre.php?id=' . $id . '">'; 
+   $link .= $label;
+   $link .= '</a>';
+   return $link;
 }
 
 ?>
